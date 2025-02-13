@@ -1,0 +1,9 @@
+COmpilation & Run Steps===
+sudo docker build -t my-php81-grpc-image -f php81.Dockerfile .
+sudo docker run -it --rm --name grpc-container my-php81-grpc-image
+
+sudo docker build -t grpc-server -f go.Dockerfile .
+docker run --rm -p 50051:50051 grpc-server
+
+#dependents files/config
+go.sum and go.mod Needs for compilation on Go server End.
